@@ -1,0 +1,31 @@
+plugins {
+    id 'org.springframework.boot' version '2.2.13.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.13.RELEASE'
+    id 'java'
+    id 'war'
+}
+
+group = 'org.ksushka'
+version = '0.0.1-SNAPSHOT'
+java.sourceCompatibility = JavaVersion.VERSION_1_8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-freemarker'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-jta-bitronix'
+
+    runtimeOnly 'org.postgresql:postgresql'
+    providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+task prepareKotlinBuildScriptModel {}

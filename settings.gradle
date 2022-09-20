@@ -1,0 +1,3 @@
+rootProject.name = 'BLPSLab3'
+include('letyclone')
+include('bse')
